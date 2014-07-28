@@ -171,20 +171,19 @@ int showSSLErrorMsg(void *ret, const char *p){
 
 
 void tmp_log(const char *p){
-   if(iDebugable)
-      __android_log_print(ANDROID_LOG_DEBUG,"tivi", p);
+
 }
 
 //void log_audio(char const*, char const*){}
 //void log_zrtp(char const*, char const*){}
 void tivi_log_tag(const char *tag, const char *val){
-   if(iDebugable)
-      __android_log_print(ANDROID_LOG_DEBUG, tag, val);
+   //if(iDebugable)
+      //__android_log_print(ANDROID_LOG_DEBUG, tag, val);
 }
 
 void tivi_log1(const char *p, int val){
-   if(iDebugable)
-      __android_log_print(ANDROID_LOG_DEBUG,"tivi", "%s=%d", p, val);
+   //if(iDebugable)
+      //__android_log_print(ANDROID_LOG_DEBUG,"tivi", "%s=%d", p, val);
    //printf("%s=%d", p, val);
 }
 

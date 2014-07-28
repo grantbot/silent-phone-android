@@ -2,27 +2,12 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-# CHECK THIS
-# When we start an automated build set some environment variable to 'yes'
-# The path setup follows the proposed dir structure depicted in the e-mail
 
-ifeq ($(AUTOMATED_BUILD),1)
 
 ### setup for automated build
-ROOT_SRC_PATH := $(JNI_ROOT)
+ROOT_SRC_PATH := $(LOCAL_PATH)/../support
 TIVI_SRC_PATH := $(ROOT_SRC_PATH)/silentphone
 
-else ifeq ($(USER),werner)
-
-### setup for Werner
-ROOT_SRC_PATH := $(HOME)/silentC
-TIVI_SRC_PATH := $(ROOT_SRC_PATH)/tivi/sources
-else
-
-### setup for Janis
-ROOT_SRC_PATH := $(HOME)/proj
-TIVI_SRC_PATH := $(ROOT_SRC_PATH)/sources
-endif
 
 #
 # Where to find the ZRTP files, the top level directory of ZRTP sources
@@ -101,7 +86,7 @@ MY_SOURCES := $(TPM_SRC)password.cpp $(TPM_SRC)media.cpp $(TPM_SRC)threads.cpp \
 	$(TPM_SRC)digestmd5.cpp $(TPM_SRC)userCfg.cpp $(TPM_SRC)build_nr.cpp\
 	$(TPM_SRC)release.cpp $(TPM_SRC)CTLangStrings.cpp $(TPM_SRC)tivi_log.cpp
 
-T_R_SRC := /
+T_R_SRC := ./
 
 MY_SOURCES += $(T_R_SRC)utils/utils.cpp $(T_R_SRC)encrypt/md5/md5.cpp \
 	$(T_R_SRC)xml/parse_xml.cpp $(T_R_SRC)sipparser/client/CSipParse.cpp \
